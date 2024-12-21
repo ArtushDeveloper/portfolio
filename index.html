@@ -185,14 +185,28 @@
     <!-- Project 1 -->
     <div class="project">
       <h3>3D Rendering Engine</h3>
-      <p>DirectX 11 based rendering engine capable of:</p>
+      <p>I designed and programmed a fully-fledged 3D game engine based on the DirectX 11 framework using HLSL and C++. The engine is capable of mesh rendering and texturing, skeletal animation, mesh skinning, scene lighting, multiple cameras, and 2D fonts for player HUD. Additionally, I developed an offline conversion tool to process data such as mesh geometry, mesh skinning information, animation clips, and textures from .glb files into an engine-compatible format using Google Protocol Buffers.</p>
+      <p>For the high-level foundation of my engine (C++) I encapsulated complex graphics concepts, such as mesh, texture, animation clip, light, and other resources, into separate classes for improved ease of use, readability, and scalability. This design makes it straightforward to add additional graphics concepts and techniques to the engine. Additionally, I developed several helper static libraries (listed below).</p>
+      <p>For the low-level core of the engine (HLSL), I implemented over 20 DirectX shaders, including Vertex, Pixel, and Compute shaders, to manage complex scene rendering pipelines. The most prominent of these is the Volumetric Deferred Lighting Pipeline.</p>
+      <p>The full list of features:</p>
       <ul>
-        <li>Basic rendering (Mesh Geometry Rendering, World Transformations, Cameras etc.)</li>
-        <li>Offline tool to convert mesh geometry information, animation and skinning data, textures etc. from .glb files to engine compatible format</li>
+        <li>Mesh Rendering</li>
+        <li>Mesh Texturing</li>
+	<li>Object World Transformations</li>
+	<li>Multiple Dynamic Cameras</li>
         <li>Mesh Skinning and Skeleton Animation</li>
-        <li>Lighting (Point, Spot, Directional and Area Lights). Optimized lighting with Volumetric Deferred Lighting pipeline</li>
+        <li>Dynamic and Static Lights(Point, Spot, Directional and Area Lights)</li>
+	<li>Volumetric Deferred Lighting Pipeline, capable of handling up to 10000 dynamic OR static lights</li>
         <li>2D Font System</li>
-        <li>Various helper APIs</li>
+        <li>Helper Static Libraries(APIs):</li>
+	<ul>
+          <li>Memory Management Library</li>
+          <li>Math Library</li>
+          <li>Object Library</li>
+          <li>File Library</li>
+	  <li>Manager Library</li>
+          <li>Time Library</li>
+        </ul>
       </ul>
       
       <!-- Subsection 1 -->
