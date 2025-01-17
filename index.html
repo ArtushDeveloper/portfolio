@@ -57,7 +57,7 @@
       max-width: 900px;
       margin: auto;
       opacity: 0;
-      padding: 40px;
+      padding: 20px;
       transform: translateY(50px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
@@ -86,7 +86,7 @@
       font-weight: normal;
     }
     /* Styling for resume links */
-    .resume-section a {
+    .resume-section a, .project a {
       text-decoration: none;
       background: #0073e6;
       color: white;
@@ -96,7 +96,7 @@
       display: inline-block;
       transition: background 0.3s ease;
     }
-    .resume-section a:hover {
+    .resume-section a:hover, .project a:hover {
       background: #003399;
     }
     .projects {
@@ -135,7 +135,7 @@
     width: 60%; /* Adjust the width to control the length */
     height: 2px; /* Thickness of the line */
     background: #0073E6; /* Line color */
-    margin: 20px auto; /* Center the line and add spacing */
+    margin: /*20px*/ auto; /* Center the line and add spacing */
     border-radius: 2px; /* Rounded ends */
   }
   </style>
@@ -185,47 +185,31 @@
     <!-- Project 1 -->
     <div class="project">
       <h3>3D Rendering Engine</h3>
-      <p>I designed and programmed a fully-fledged 3D game engine based on the DirectX 11 framework using HLSL and C++. The engine is capable of mesh rendering and texturing, skeletal animation, mesh skinning, scene lighting, multiple cameras, and 2D fonts for player HUD. Additionally, I developed an offline conversion tool to process data such as mesh geometry, mesh skinning information, animation clips, and textures from .glb files into an engine-compatible format using Google Protocol Buffers.</p>
-      <p>For the high-level foundation of my engine (C++) I encapsulated complex graphics concepts, such as mesh, texture, animation clip, light, and other resources, into separate classes for improved ease of use, readability, and scalability. This design makes it straightforward to add additional graphics concepts and techniques to the engine. Additionally, I developed several helper static libraries (listed below).</p>
-      <p>For the low-level core of the engine (HLSL), I implemented over 20 DirectX shaders, including Vertex, Pixel, and Compute shaders, to manage complex scene rendering pipelines. The most prominent of these is the Volumetric Deferred Lighting Pipeline.</p>
-      <p>The full list of features:</p>
+      <p>DirectX 11 based rendering engine capable of:</p>
       <ul>
-        <li>Mesh Rendering</li>
-        <li>Mesh Texturing</li>
-	<li>Object World Transformations</li>
-	<li>Multiple Dynamic Cameras</li>
+        <li>Basic rendering (Mesh Geometry Rendering, World Transformations, Cameras etc.)</li>
+        <li>Offline tool to convert mesh geometry information, animation and skinning data, textures etc. from .glb files to engine compatible format</li>
         <li>Mesh Skinning and Skeleton Animation</li>
-        <li>Dynamic and Static Lights(Point, Spot, Directional and Area Lights)</li>
-	<li>Volumetric Deferred Lighting Pipeline, capable of handling up to 10000 dynamic OR static lights</li>
+        <li>Lighting (Point, Spot, Directional and Area Lights). Optimized lighting with Volumetric Deferred Lighting pipeline</li>
         <li>2D Font System</li>
-        <li>Helper Static Libraries(APIs):</li>
-	<ul>
-          <li>Memory Management Library</li>
-          <li>Math Library</li>
-          <li>Object Library</li>
-          <li>File Library</li>
-	  <li>Manager Library</li>
-          <li>Time Library</li>
-        </ul>
+        <li>Various helper APIs</li>
       </ul>
       
       <!-- Subsection 1 -->
-      <h4>Part 1: Basic Rendering Features</h4>
+      <h4>Basic Rendering Features</h4>
       <iframe src="https://www.youtube.com/embed/WLVCz2vjdlU" allowfullscreen></iframe>
-      <p>This demo shows features of the engine such as Mesh Rendering and Texturing, Object World Transformations, Multiple Cameras, Camera Movement and Font System in action</p>
+      <p>The demo shows Mesh Rendering and Texturing, World Transformations, Multiple Cameras, Camera Movement and Font System in action</p>
       
       <!-- Subsection 2 -->
-      <h4>Part 2: Animation and Skinning</h4>
+      <h4>Animation and Skinning</h4>
       <iframe src="https://www.youtube.com/embed/5j3_zu5Lbkk" allowfullscreen></iframe>
-      <p>This demo shows Mesh Skinning and Skeleton Animation performed on some character models taken from an open-source website Mixamo using DirectCompute. Specifically:</p>
-      <ul>
-        <li>Clip compression on the conversion tool side resulting in 3.3x less data processed at run-time, while plausibly preserving the visual animation</li>
-        <li>2D Anim space blending. Blends 2 clips together over a period of time to create smoother transition between clips as opposed to switching clips instantly with no interpolation</li>
-        <li>Multiple animations being rendered on different skeletons and models with DirectX Compute Shaders, utilizing the GPU's multithreaded compute power (at least 1024 threads per model)</li>
-      </ul>      
-
+      <p>The demo shows Mesh Skinning and Skeleton Animation performed on some character models taken from an open-source website Mixamo. Specifically:</p>
+      <li>Clip compression on the conversion tool side resulting in 3.3x less data processed at run-time, while plausibly preserving the visual animation</li>
+      <li>2D Anim space blending. Blends 2 clips together over a period of time to create smoother transition between clips as opposed to switching clips instantly with no interpolation</li>
+      <li>Multiple animations being rendered on different skeletons and models with DirectX Compute Shaders, utilizing the GPU's multithreaded compute power (at least 1024 threads per model)</li>
+      
       <!-- Subsection 3 -->
-      <h4>Part 4: Deferred vs. Forward Lighting</h4>
+      <h4>Deferred vs. Forward Lighting</h4>
       <div style="display: flex; gap: 20px;">
 
 	<!-- Subsubsection 3.1 -->
@@ -248,29 +232,27 @@
 
     <!-- Project 2 -->
     <div class="project">
-      <h3>Networking Layer for Omega Race</h3>
+      <h3>Omega Race Multiplayer Network Layer</h3>
       <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_4" allowfullscreen></iframe>
       <p>Overview: A project focused on developing the networking layer for the classic Omega Race game.</p>
     </div>
 
     <!-- Project 3 -->
     <div class="project">
-      <h3>Space Invaders Game Remake</h3>
+      <h3>Space Invaders Game Clone</h3>
       <iframe src="https://www.youtube.com/embed/EfLFNiJzKbw" allowfullscreen></iframe>
-      <p>My personal remake of the good old game Space Invaders written from scratch in C# and .NET. Employs 10 Object-oriented Software Design Patterns such as:</p>
-      <ul>
-        <li>Iterator Pattern - </li>
-        <li>Strategy Pattern - </li>
-        <li>Factory Pattern - </li>
-        <li>Proxy Pattern - </li>
-        <li>State Pattern - </li>
-        <li>Visitor Pattern - </li>
-        <li>Observer Pattern - </li>
-        <li>Command Pattern - </li>
-        <li>Composite Pattern - </li>
-        <li>Object Pooling Method - </li>
-      </ul>
-      <p>The demo shows the game in action (different scenes, sounds effects, alien animation etc.). Also, shows collision grids to test collision between different game objects.</p>
+      <p>My personal clone of the good old arcade game Space Invaders written from scratch in C# and .NET. Employs 11 Object-oriented Software Design Patterns such as: Iterator, Strategy, Factory, Proxy, State, Visitor, Observer, Command, Composite, Flyweight and Objerct Pooling Method. The demo shows the game in action (different scenes, sounds effects, alien animation etc.). Also, shows collision grids to test collision between different game objects.</p>
+      <p>Engineering Design Documentation: Click on the buttons below to view or download the document describing the use and the need for each pattern along with UML diagrams</p>
+
+      <!-- View Engineering Design Documentation -->
+      <a href="EngineeringDesignDocumentation.pdf" target="_blank" style="margin-right: 10px;">
+        <i class="fas fa-file-pdf"></i> View Documentation
+      </a>
+      <!-- Download Engineering Design Documentation -->
+      <a href="EngineeringDesignDocumentation.pdf" download>
+        <i class="fas fa-download"></i> Download Documentation
+      </a>
+
     </div>
   </div>
 </section>
